@@ -1,0 +1,9 @@
+{
+    "require-dev": {
+        "behat/behat": "*@dev",
+        "phpspec/phpspec": "*@dev"
+    },
+    "autoload": {
+        "psr-4": {"L3l0Labs\\": "src/"}
+    }
+}
