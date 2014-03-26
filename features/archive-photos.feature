@@ -4,17 +4,20 @@ Feature: Archive photo
   I want to archive my photos securely
   so I have access to them everywhere
 
-  Scenario: Create whole archive
+  Background:
     Given I am photos owner
-    And I want to upload my whole photos directory
-    When I select directory with photos
-    And I upload this directory as archive
-    Then I should be able to download and preview my new archive
+    And directory "/local-directory/myholidays" has such photos:
+      | DSC110.jpg |
+      | DSC111.jpg |
+      | DSC111.png |
+
+  Scenario: Create whole archive
+    Given I want to upload my whole photos directory
+    When I upload "/local-directory/myholidays" directory as "my-holidays2014" archive
+    Then I should be able to download and preview "my-holidays2014" archive
 
   Scenario: Add single photo to archive
-    Given I am photos owner
-    And I have photo archive
+    Given I have "my holidays" photo archive
     And I want upload photo to existing archive
-    When I select single photo
-    And I upload this photo to archive
-    Then I should be able to download and preview this photo
+    When I upload "/local-directory/myholidays/DSC110.jpg" photo to "my holidays" archive
+    Then I should be able to download and preview "DSC110.jpg" photo from "my holidays" archive
