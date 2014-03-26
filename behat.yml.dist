@@ -1,0 +1,6 @@
+default:
+  suites:
+    photo_owner:
+      contexts: [ PhotosOwnerContext ]
+      filters:
+        role: photos owner

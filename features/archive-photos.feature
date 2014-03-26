@@ -1,6 +1,8 @@
-Feature: As a photos owner I want to
-  archive my photos securely so I have access to them
-  everywhere
+@wip
+Feature: Archive photo
+  As a photos owner
+  I want to archive my photos securely
+  so I have access to them everywhere
 
   Scenario: Create whole archive
     Given I am photos owner
