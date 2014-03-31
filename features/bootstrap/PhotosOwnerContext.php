@@ -2,16 +2,15 @@
 
 use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Behat\Context\SnippetAcceptingContext;
+use Behat\Gherkin\Node\TableNode;
 
 class PhotosOwnerContext implements SnippetAcceptingContext
 {
-
     /**
      * @Given I am photos owner
      */
     public function iAmPhotosOwner()
     {
-        throw new PendingException();
     }
 
     /**
