@@ -15,9 +15,9 @@ class PhotosOwnerContext implements SnippetAcceptingContext
     }
 
     /**
-     * @Given directory :arg1 has such photos:
+     * @Given directory :directoryName has such photos:
      */
-    public function directoryHasSuchPhotos($arg1, TableNode $table)
+    public function directoryHasSuchPhotos($directoryName, TableNode $table)
     {
         throw new PendingException();
     }
@@ -31,25 +31,25 @@ class PhotosOwnerContext implements SnippetAcceptingContext
     }
 
     /**
-     * @When I upload :arg1 directory as :arg2 archive
+     * @When I upload :directoryName directory as :archiveName archive
      */
-    public function iUploadDirectoryAsArchive($arg1, $arg2)
+    public function iUploadDirectoryAsArchive($directoryName, $archiveName)
     {
         throw new PendingException();
     }
 
     /**
-     * @Then I should be able to download and preview :arg1 archive
+     * @Then I should be able to download and preview :archiveName archive
      */
-    public function iShouldBeAbleToDownloadAndPreviewArchive($arg1)
+    public function iShouldBeAbleToDownloadAndPreviewArchive($archiveName)
     {
         throw new PendingException();
     }
 
     /**
-     * @Given I have :arg1 photo archive
+     * @Given I have :archiveName photo archive
      */
-    public function iHavePhotoArchive($arg1)
+    public function iHavePhotoArchive($archiveName)
     {
         throw new PendingException();
     }
@@ -63,17 +63,17 @@ class PhotosOwnerContext implements SnippetAcceptingContext
     }
 
     /**
-     * @When I upload :arg1 photo to :arg2 archive
+     * @When I upload :photoPath photo to :archiveName archive
      */
-    public function iUploadPhotoToArchive($arg1, $arg2)
+    public function iUploadPhotoToArchive($photoPath, $archiveName)
     {
         throw new PendingException();
     }
 
     /**
-     * @Then I should be able to download and preview :arg1 photo from :arg2 archive
+     * @Then I should be able to download and preview :photoPath photo from :archiveName archive
      */
-    public function iShouldBeAbleToDownloadAndPreviewPhotoFromArchive($arg1, $arg2)
+    public function iShouldBeAbleToDownloadAndPreviewPhotoFromArchive($photoPath, $archiveName)
     {
         throw new PendingException();
     }
