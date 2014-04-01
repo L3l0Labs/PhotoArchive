@@ -4,8 +4,20 @@ use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\TableNode;
 
+use L3l0Labs\PhotoArchive\Filesystem\InMemoryFilesystem;
+use L3l0Labs\PhotoArchive\Filesystem\Filename;
+use L3l0Labs\PhotoArchive\Filesystem\File\Photo;
+use L3l0Labs\PhotoArchive\Filesystem\File\Directory;
+
 class PhotosOwnerContext implements SnippetAcceptingContext
 {
+    private $filesystem;
+
+    public function __construct()
+    {
+        $this->filesystem = new InMemoryFilesystem();
+    }
+
     /**
      * @Given I am photos owner
      */
@@ -18,7 +30,11 @@ class PhotosOwnerContext implements SnippetAcceptingContext
      */
     public function directoryHasSuchPhotos($directoryName, TableNode $table)
     {
-        throw new PendingException();
+        foreach ($table->getHash() as $row) {
+            $photos[] = new Photo(new Filename($directoryName.DIRECTORY_SEPARATOR.$row['photo name']));
+        }
+        $directory = new Directory(new Filename($directoryName), $photos);
+        $this->filesystem->add($directory);
     }
 
     /**
@@ -26,7 +42,6 @@ class PhotosOwnerContext implements SnippetAcceptingContext
      */
     public function iWantToUploadMyWholePhotosDirectory()
     {
-        throw new PendingException();
     }
 
     /**
