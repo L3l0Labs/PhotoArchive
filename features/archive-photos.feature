@@ -7,6 +7,7 @@ Feature: Archive photo
   Background:
     Given I am photos owner
     And directory "/local-directory/myholidays" has such photos:
+      | photo name |
       | DSC110.jpg |
       | DSC111.jpg |
       | DSC111.png |
