@@ -55,10 +55,20 @@ class Filename
 
     private function normalizePath($path)
     {
-        if (DIRECTORY_SEPARATOR === substr($path, -1)) {
-            return substr($path, 0, strlen($path) - 1);
+        if ($this->endsWithDirectorySeparator($path)) {
+            return $this->getPathWithoutEndingDirectorySeparator($path);
         }
 
         return $path;
+    }
+
+    private function endsWithDirectorySeparator($path)
+    {
+        return DIRECTORY_SEPARATOR === substr($path, -1);
+    }
+
+    private function getPathWithoutEndingDirectorySeparator($path)
+    {
+        return substr($path, 0, strlen($path) - 1);
     }
 }

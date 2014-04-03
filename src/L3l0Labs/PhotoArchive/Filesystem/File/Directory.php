@@ -23,14 +23,14 @@ final class Directory extends File
 
     private function assertFilesAreValid($files)
     {
-        $invalidFiles = $this->validateFiles($files);
+        $invalidFiles = $this->invalidFiles($files);
 
         if ($invalidFiles) {
             throw new FilesOutOfDirectory($this->filename(), $this->fetchInvalidFileNames($invalidFiles));
         }
     }
 
-    private function validateFiles($files)
+    private function invalidFiles($files)
     {
         return array_filter($files, function ($file) {
             return !$file->filename()->contains($this->name);
