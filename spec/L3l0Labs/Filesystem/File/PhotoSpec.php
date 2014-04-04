@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\L3l0Labs\PhotoArchive\Filesystem\File;
+namespace spec\L3l0Labs\Filesystem\File;
 
-use L3l0Labs\PhotoArchive\Filesystem\Filename;
+use L3l0Labs\Filesystem\Filename;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\L3l0Labs\PhotoArchive\Filesystem\Exception;
+namespace spec\L3l0Labs\Filesystem\Exception;
 
-use L3l0Labs\PhotoArchive\Filesystem\Filename;
+use L3l0Labs\Filesystem\Filename;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\L3l0Labs\PhotoArchive\Filesystem;
+namespace spec\L3l0Labs\Filesystem;
 
-use L3l0Labs\PhotoArchive\Filesystem\Filename;
+use L3l0Labs\Filesystem\Filename;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -49,7 +49,7 @@ class FilenameSpec extends ObjectBehavior
     {
         $this->beConstructedWith('/home/some/path/g.jpg');
 
-        $this->contains(new Filename('/home'))->shouldBe(true);
+        $this->contains(new \L3l0Labs\Filesystem\Filename('/home'))->shouldBe(true);
         $this->contains(new Filename('/home/some'))->shouldBe(true);
         $this->contains(new Filename('/home/some/'))->shouldBe(true);
         $this->contains(new Filename('/home/some/'))->shouldBe(true);

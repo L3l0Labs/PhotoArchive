@@ -1,8 +1,8 @@
 <?php
 
-namespace L3l0Labs\PhotoArchive\Filesystem\File;
+namespace L3l0Labs\Filesystem\File;
 
-use L3l0Labs\PhotoArchive\Filesystem\Filename;
+use L3l0Labs\Filesystem\Filename;
 
 abstract class File
 {

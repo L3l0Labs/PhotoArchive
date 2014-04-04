@@ -1,8 +1,9 @@
 <?php
 
-namespace L3l0Labs\PhotoArchive\Filesystem\Exception;
+namespace L3l0Labs\Filesystem\Exception;
 
-use L3l0Labs\PhotoArchive\Filesystem\Filename;
+use InvalidArgumentException;
+use L3l0Labs\Filesystem\Filename;
 
 class FilesOutOfDirectory extends \InvalidArgumentException
 {

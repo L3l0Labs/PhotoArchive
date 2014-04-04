@@ -1,9 +1,9 @@
 <?php
 
-namespace spec\L3l0Labs\PhotoArchive\Filesystem\File;
+namespace spec\L3l0Labs\Filesystem\File;
 
-use L3l0Labs\PhotoArchive\Filesystem\Filename;
-use L3l0Labs\PhotoArchive\Filesystem\File\Photo;
+use L3l0Labs\Filesystem\Filename;
+use L3l0Labs\Filesystem\File\Photo;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -16,14 +16,14 @@ class DirectorySpec extends ObjectBehavior
 
     function it_is_file()
     {
-        $this->shouldHaveType('L3l0Labs\PhotoArchive\Filesystem\File\File');
+        $this->shouldHaveType('L3l0Labs\Filesystem\File\File');
     }
 
     function it_allows_to_get_files_from_directory(Filename $name)
     {
         $name->path()->willReturn('/home/l3l0');
         $selfie = new Photo(new Filename('/home/l3l0/aaa.jpg'));
-        $myHolidayPhoto = new Photo(new Filename('/home/l3l0/zzz.jpg'));
+        $myHolidayPhoto = new \L3l0Labs\Filesystem\File\Photo(new Filename('/home/l3l0/zzz.jpg'));
         $this->beConstructedWith($name, [$selfie, $myHolidayPhoto]);
 
         $this->files()->shouldBe([$selfie, $myHolidayPhoto]);
@@ -34,6 +34,6 @@ class DirectorySpec extends ObjectBehavior
         $name->path()->willReturn('/home/l3l0/zzz');
         $selfie = new Photo(new Filename('/home/other/zzz/aaa.jpg'));
 
-        $this->shouldThrow('L3l0Labs\PhotoArchive\Filesystem\Exception\FilesOutOfDirectory')->during('__construct', [$name, [$selfie]]);
+        $this->shouldThrow('L3l0Labs\Filesystem\Exception\FilesOutOfDirectory')->during('__construct', [$name, [$selfie]]);
     }
 }

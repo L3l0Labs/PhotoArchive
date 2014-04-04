@@ -4,6 +4,6 @@
         "phpspec/phpspec": "*@dev"
     },
     "autoload": {
-        "psr-4": {"L3l0Labs\\PhotoArchive\\": "src/L3l0Labs/PhotoArchive/"}
+        "psr-4": {"L3l0Labs\\": "src/L3l0Labs/"}
     }
 }

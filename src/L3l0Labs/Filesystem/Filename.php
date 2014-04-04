@@ -1,6 +1,6 @@
 <?php
 
-namespace L3l0Labs\PhotoArchive\Filesystem;
+namespace L3l0Labs\Filesystem;
 
 class Filename
 {

@@ -4,18 +4,20 @@ use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\TableNode;
 
-use L3l0Labs\PhotoArchive\Filesystem\InMemoryFilesystem;
-use L3l0Labs\PhotoArchive\Filesystem\Filename;
-use L3l0Labs\PhotoArchive\Filesystem\File\Photo;
-use L3l0Labs\PhotoArchive\Filesystem\File\Directory;
+use L3l0Labs\Filesystem\InMemoryFilesystem;
+use L3l0Labs\Filesystem\Filename;
+use L3l0Labs\Filesystem\File\Photo;
+use L3l0Labs\Filesystem\File\Directory;
 
 class PhotosOwnerContext implements SnippetAcceptingContext
 {
     private $filesystem;
+    private $uploadUseCase;
 
     public function __construct()
     {
         $this->filesystem = new InMemoryFilesystem();
+//        $this->uploadUseCase = new Upload($this->filesystem, $this->archiveRepository);
     }
 
     /**
@@ -49,7 +51,7 @@ class PhotosOwnerContext implements SnippetAcceptingContext
      */
     public function iUploadDirectoryAsArchive($directoryName, $archiveName)
     {
-        throw new PendingException();
+        $this->uploadUseCase->uploadToArchive(new Filename($directoryName), $archiveName);
     }
 
     /**

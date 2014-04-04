@@ -1,9 +1,9 @@
 <?php
 
-namespace L3l0Labs\PhotoArchive\Filesystem\File;
+namespace L3l0Labs\Filesystem\File;
 
-use L3l0Labs\PhotoArchive\Filesystem\Exception\FilesOutOfDirectory;
-use L3l0Labs\PhotoArchive\Filesystem\Filename;
+use L3l0Labs\Filesystem\Exception\FilesOutOfDirectory;
+use L3l0Labs\Filesystem\Filename;
 
 final class Directory extends File
 {

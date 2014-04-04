@@ -1,8 +1,8 @@
 <?php
 
-namespace L3l0Labs\PhotoArchive\Filesystem;
+namespace L3l0Labs\Filesystem;
 
-use L3l0Labs\PhotoArchive\Filesystem\File\File;
+use L3l0Labs\Filesystem\File\File;
 
 interface Filesystem
 {
