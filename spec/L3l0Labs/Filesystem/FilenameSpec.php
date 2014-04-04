@@ -8,6 +8,11 @@ use Prophecy\Argument;
 
 class FilenameSpec extends ObjectBehavior
 {
+    function let()
+    {
+        $this->beConstructedWith('/');
+    }
+
     function it_allows_to_get_path()
     {
         $this->beConstructedWith('/home/some/path/g.jpg');
@@ -35,7 +40,6 @@ class FilenameSpec extends ObjectBehavior
 
     function it_checks_root_path()
     {
-        $this->beConstructedWith('/');
         $this->isRootPath()->shouldBe(true);
     }
 
@@ -49,12 +53,19 @@ class FilenameSpec extends ObjectBehavior
     {
         $this->beConstructedWith('/home/some/path/g.jpg');
 
-        $this->contains(new \L3l0Labs\Filesystem\Filename('/home'))->shouldBe(true);
-        $this->contains(new Filename('/home/some'))->shouldBe(true);
-        $this->contains(new Filename('/home/some/'))->shouldBe(true);
-        $this->contains(new Filename('/home/some/'))->shouldBe(true);
-        $this->contains(new Filename('/home/some/path'))->shouldBe(true);
-        $this->contains(new Filename('/aaa'))->shouldBe(false);
-        $this->contains(new Filename('/home/l3l0'))->shouldBe(false);
+        $this->contains(Filename::create('/home'))->shouldBe(true);
+        $this->contains(Filename::create('/home/some'))->shouldBe(true);
+        $this->contains(Filename::create('/home/some/'))->shouldBe(true);
+        $this->contains(Filename::create('/home/some/'))->shouldBe(true);
+        $this->contains(Filename::create('/home/some/path'))->shouldBe(true);
+        $this->contains(Filename::create('/aaa'))->shouldBe(false);
+        $this->contains(Filename::create('/home/l3l0'))->shouldBe(false);
+    }
+
+    function it_can_create_itself()
+    {
+        $filename = self::create('/home/some');
+        $filename->shouldBeAnInstanceOf('L3l0Labs\Filesystem\Filename');
+        $filename->path()->shouldBe('/home/some');
     }
 }

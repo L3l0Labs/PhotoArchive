@@ -22,7 +22,7 @@ class Filename
 
     public function baseFilename()
     {
-        return new Filename(dirname($this->path));
+        return self::create(dirname($this->path));
     }
 
     public function name()
@@ -70,5 +70,10 @@ class Filename
     private function getPathWithoutEndingDirectorySeparator($path)
     {
         return substr($path, 0, strlen($path) - 1);
+    }
+
+    public static function create($path)
+    {
+        return new self($path);
     }
 }
