@@ -19,4 +19,9 @@ class InMemoryFilesystem implements Filesystem
     {
         return array_values($this->files);
     }
+
+    public function get(Filename $filename)
+    {
+        return $this->files[$filename->path()];
+    }
 }

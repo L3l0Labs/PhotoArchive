@@ -16,6 +16,9 @@ final class Directory extends File
         $this->files = $files;
     }
 
+    /**
+     * @return File[]
+     */
     public function files()
     {
         return $this->files;

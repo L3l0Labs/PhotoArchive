@@ -21,4 +21,19 @@ class InMemoryFilesystemSpec extends ObjectBehavior
         $this->add($file)->shouldBe($this);
         $this->all()->shouldBe([$file]);
     }
+
+    function it_get_file_by_path(File $file, File $file2, Filename $name, Filename $name2)
+    {
+        $name->path()->willReturn('/home/l3l0/test.jpg');
+        $name2->path()->willReturn('/home/l3l0/test.png');
+
+        $file->filename()->willReturn($name);
+        $file2->filename()->willReturn($name2);
+
+        $this->add($file);
+        $this->add($file2);
+
+        $this->get($name)->shouldBe($file);
+        $this->get($name2)->shouldBe($file2);
+    }
 }
