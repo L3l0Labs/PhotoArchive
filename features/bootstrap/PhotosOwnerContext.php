@@ -8,16 +8,28 @@ use L3l0Labs\Filesystem\InMemoryFilesystem;
 use L3l0Labs\Filesystem\Filename;
 use L3l0Labs\Filesystem\File\Photo;
 use L3l0Labs\Filesystem\File\Directory;
+use L3l0Labs\Archive\Name as ArchiveName;
+use L3l0Labs\Archive\InMemoryRepository;
+use L3l0Labs\Archive\Factory as ArchiveFactory;
+use L3l0Labs\FileArchive\UploadArchive;
 
 class PhotosOwnerContext implements SnippetAcceptingContext
 {
     private $filesystem;
-    private $uploadUseCase;
+    private $uploadArchiveUseCase;
+    private $archiveRepository;
+    private $archiveFactory;
 
     public function __construct()
     {
         $this->filesystem = new InMemoryFilesystem();
-//        $this->uploadUseCase = new Upload($this->filesystem, $this->archiveRepository);
+        $this->archiveRepository = new InMemoryRepository();
+        $this->archiveFactory = new ArchiveFactory();
+        $this->uploadArchiveUseCase = new UploadArchive(
+            $this->filesystem,
+            $this->archiveRepository,
+            $this->archiveFactory
+        );
     }
 
     /**
@@ -32,10 +44,11 @@ class PhotosOwnerContext implements SnippetAcceptingContext
      */
     public function directoryHasSuchPhotos($directoryName, TableNode $table)
     {
+        $photos = [];
         foreach ($table->getHash() as $row) {
-            $photos[] = new Photo(new Filename($directoryName.DIRECTORY_SEPARATOR.$row['photo name']));
+            $photos[] = new Photo(Filename::create($directoryName.DIRECTORY_SEPARATOR.$row['photo name']));
         }
-        $directory = new Directory(new Filename($directoryName), $photos);
+        $directory = new Directory(Filename::create($directoryName), $photos);
         $this->filesystem->add($directory);
     }
 
@@ -51,13 +64,13 @@ class PhotosOwnerContext implements SnippetAcceptingContext
      */
     public function iUploadDirectoryAsArchive($directoryName, $archiveName)
     {
-        $this->uploadUseCase->uploadToArchive(new Filename($directoryName), $archiveName);
+        $this->uploadArchiveUseCase->uploadToArchive(ArchiveName::create($archiveName), Filename::create($directoryName));
     }
 
     /**
-     * @Then I should be able to download and preview :archiveName archive
+     * @Then I should be able to download :archiveName archive
      */
-    public function iShouldBeAbleToDownloadAndPreviewArchive($archiveName)
+    public function iShouldBeAbleToDownloadArchive($archiveName)
     {
         throw new PendingException();
     }

@@ -28,16 +28,17 @@ class UploadArchive
 
     public function uploadToArchive(Name $archiveName, Filename $fileToUploadName)
     {
+        $archive = $this->archiveFactory->createArchive($archiveName);
+
         /**
          * @var Directory $directory
          */
         $directory = $this->filesystem->get($fileToUploadName);
-        $paths = [];
         foreach ($directory->files() as $file) {
-            $paths[] = $file->filename()->path();
+            $archive->add($file->filename()->path());
         }
 
-        $archive = $this->archiveFactory->createArchive($archiveName, $paths);
+
         $this->repository->add($archive);
     }
 }

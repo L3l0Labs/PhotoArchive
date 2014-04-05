@@ -2,7 +2,13 @@
 
 namespace L3l0Labs\Archive;
 
-interface Factory
+class Factory
 {
-    public function createArchive(Name $name, $paths);
+    /**
+     * @return Archive
+     */
+    public function createArchive(Name $name)
+    {
+        return new Archive($name);
+    }
 }

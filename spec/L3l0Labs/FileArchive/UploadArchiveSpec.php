@@ -43,12 +43,13 @@ class UploadArchiveSpec extends ObjectBehavior
             ->createArchive(
                 Argument::that(function (ArchiveName $name) {
                     return 'MyArchive!' === $name->name();
-                }),
-                ['/home/test/file.jpg', '/home/test/file.png']
+                })
             )
             ->shouldBeCalled()
             ->willReturn($archive)
         ;
+        $archive->add('/home/test/file.jpg')->shouldBeCalled();
+        $archive->add('/home/test/file.png')->shouldBeCalled();
         $archiveRepository
             ->add($archive)
             ->shouldBeCalled()
