@@ -6,12 +6,11 @@ use L3l0Labs\Filesystem\Filename;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class PhotoSpec extends ObjectBehavior
+class FileSpec extends ObjectBehavior
 {
-    function it_allows_to_get_name(Filename $filename)
+    function it_allows_to_get_name()
     {
-        $filename->path()->willReturn('/home/somepath/file.jpg');
-        $filename->name()->willReturn('file.jpg');
+        $filename = Filename::create('/home/somepath/file.jpg');
         $this->beConstructedWith($filename);
 
         $this->filename()->path()->shouldBe('/home/somepath/file.jpg');

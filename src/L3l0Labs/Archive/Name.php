@@ -2,7 +2,7 @@
 
 namespace L3l0Labs\Archive;
 
-class Name
+final class Name
 {
     private $name;
 

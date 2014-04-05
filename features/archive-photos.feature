@@ -15,8 +15,8 @@ Feature: Archive photo
   Scenario: Create whole archive
     Given I want to upload my whole photos directory
     When I upload "/local-directory/myholidays" directory as "my-holidays2014" archive
-    Then I should be able to download "my-holidays2014" archive
-    And "my-holidays2014" archive should contains such files:
+    Then I should be able to download "my-holidays2014" archive to "/local-directory/new" directory
+    And directory "/local-directory/new" should contains such files:
       | file name  |
       | DSC110.jpg |
       | DSC111.jpg |

@@ -2,7 +2,7 @@
 
 namespace L3l0Labs\Filesystem;
 
-class Filename
+final class Filename
 {
     private $path;
 

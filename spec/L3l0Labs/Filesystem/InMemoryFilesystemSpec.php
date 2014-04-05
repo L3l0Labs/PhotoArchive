@@ -14,21 +14,20 @@ class InMemoryFilesystemSpec extends ObjectBehavior
         $this->shouldHaveType('L3l0Labs\Filesystem\Filesystem');
     }
 
-    function it_stores_files(File $file, Filename $name)
+    function it_stores_files(File $file)
     {
-        $name->path()->willReturn('/home/l3l0/test.jpg');
-        $file->filename()->willReturn($name);
+        $file->filename()->willReturn(Filename::create('/home/l3l0/test.jpg'));
         $this->add($file)->shouldBe($this);
         $this->all()->shouldBe([$file]);
     }
 
-    function it_get_file_by_path(File $file, File $file2, Filename $name, Filename $name2)
+    function it_get_file_by_path(File $file, File $file2)
     {
-        $name->path()->willReturn('/home/l3l0/test.jpg');
-        $name2->path()->willReturn('/home/l3l0/test.png');
+        $name = Filename::create('/home/l3l0/test.jpg');
+        $name2 = Filename::create('/home/l3l0/test.png');
 
-        $file->filename()->willReturn($name);
-        $file2->filename()->willReturn($name2);
+        $file->filename()->willReturn(Filename::create('/home/l3l0/test.jpg'));
+        $file2->filename()->willReturn(Filename::create('/home/l3l0/test.png'));
 
         $this->add($file);
         $this->add($file2);

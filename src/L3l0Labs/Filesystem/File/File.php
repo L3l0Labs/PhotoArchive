@@ -4,7 +4,7 @@ namespace L3l0Labs\Filesystem\File;
 
 use L3l0Labs\Filesystem\Filename;
 
-abstract class File
+class File
 {
     protected $name;
 

@@ -5,19 +5,43 @@ namespace L3l0Labs\Archive;
 class Archive
 {
     private $name;
-    private $paths;
+    private $archivedFiles = [];
+    private $uploadingFiles = [];
 
     public function __construct(Name $name)
     {
         $this->name = $name;
     }
-    public function add($path)
+
+    public function addFileToUpload(Filename $filename)
     {
-        $this->paths[$path] = $path;
+        $this->uploadingFiles[$filename->path()] = $filename->path();
     }
 
-    public function paths()
+    public function uploadingFiles()
     {
-        return array_values($this->paths);
+        return array_map(
+            function ($path) {
+                return Filename::create($path);
+            },
+            array_values($this->uploadingFiles)
+        );
+    }
+
+    public function archivedFiles()
+    {
+        return $this->archivedFiles;
+    }
+
+    public function upload(Filename $dirPath)
+    {
+        foreach ($this->uploadingFiles as $path) {
+            $this->archivedFiles[] = str_replace($dirPath->path().DIRECTORY_SEPARATOR, '', $path);
+        }
+    }
+
+    public function name()
+    {
+        return $this->name;
     }
 }

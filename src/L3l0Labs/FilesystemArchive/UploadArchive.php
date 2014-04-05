@@ -1,10 +1,11 @@
 <?php
 
-namespace L3l0Labs\FileArchive;
+namespace L3l0Labs\FilesystemArchive;
 
-use L3l0Labs\Archive\Factory;
+use L3l0Labs\Archive\ArchiveFactory;
 use L3l0Labs\Archive\Name;
 use L3l0Labs\Archive\Repository;
+use L3l0Labs\Archive\Filename as ArchiveFilename;
 use L3l0Labs\Filesystem\File\Directory;
 use L3l0Labs\Filesystem\Filename;
 use L3l0Labs\Filesystem\Filesystem;
@@ -18,7 +19,7 @@ class UploadArchive
     public function __construct(
         Filesystem $filesystem,
         Repository $repository,
-        Factory $archiveFactory
+        ArchiveFactory $archiveFactory
     )
     {
         $this->filesystem = $filesystem;
@@ -35,9 +36,9 @@ class UploadArchive
          */
         $directory = $this->filesystem->get($fileToUploadName);
         foreach ($directory->files() as $file) {
-            $archive->add($file->filename()->path());
+            $archive->addFileToUpload(ArchiveFilename::create($file->filename()->path()));
         }
-
+        $archive->upload(ArchiveFilename::create($fileToUploadName->path()));
 
         $this->repository->add($archive);
     }

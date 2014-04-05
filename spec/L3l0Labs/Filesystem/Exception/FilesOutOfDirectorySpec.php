@@ -8,11 +8,11 @@ use Prophecy\Argument;
 
 class FilesOutOfDirectorySpec extends ObjectBehavior
 {
-    function let(Filename $directoryName, Filename $file1Name, Filename $file2Name)
+    function let()
     {
-        $directoryName->path()->willReturn('/home/aaa');
-        $file1Name->path()->willReturn('/home/l3l0/file.png');
-        $file2Name->path()->willReturn('/home/l3l0/file2.png');
+        $directoryName = Filename::create('/home/aaa');
+        $file1Name = Filename::create('/home/l3l0/file.png');
+        $file2Name = Filename::create('/home/l3l0/file2.png');
         $this
             ->beConstructedWith(
                 $directoryName,
