@@ -12,6 +12,7 @@ Feature: Archive photo
       | DSC111.jpg |
       | DSC111.png |
 
+  @ready
   Scenario: Create whole archive
     Given I want to upload my whole photos directory
     When I upload "/local-directory/myholidays" directory as "my-holidays2014" archive
