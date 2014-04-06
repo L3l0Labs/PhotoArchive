@@ -1,0 +1,4 @@
+l3l0_labs_filesystem_archive:
+    resource: "@L3l0LabsFilesystemArchiveBundle/Resources/config/routing.yml"
+    prefix:   /
+
