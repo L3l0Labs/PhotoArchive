@@ -25,7 +25,7 @@ class ArchiveSpec extends ObjectBehavior
         $this->uploadingFiles()[1]->path()->shouldBe('/home/file/aaa/test.png');
 
         $this->upload(Filename::create('/home/file'));
-        $this->archivedFiles()->shouldBe(['test.png', 'aaa/test.png']);
+        $this->archivedFiles()->shouldBe(['/home/file/test.png' => 'test.png', '/home/file/aaa/test.png' => 'aaa/test.png']);
     }
 
     function it_gets_name()

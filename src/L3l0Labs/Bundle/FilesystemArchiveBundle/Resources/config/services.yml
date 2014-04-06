@@ -1,7 +1,14 @@
 parameters:
-#    l3l0_labs_filesystem_archive.example.class: L3l0Labs\Bundle\FilesystemArchiveBundle\Example
+    l3l0_labs.archive.form_type.upload.class: L3l0Labs\Bundle\FilesystemArchiveBundle\Form\ArchiveUploadType
 
 services:
-#    l3l0_labs_filesystem_archive.example:
-#        class: %l3l0_labs_filesystem_archive.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    l3l0_labs.archive.form_type.upload:
+        class: %l3l0_labs.archive.form_type.upload.class%
+
+    l3l0_labs.archive.form.upload:
+        class: Symfony\Component\Form\FormInterface
+        factory_service: form.factory
+        factory_method: createNamed
+        arguments:
+            - 'archive_upload'
+            - @l3l0_labs.archive.form_type.upload

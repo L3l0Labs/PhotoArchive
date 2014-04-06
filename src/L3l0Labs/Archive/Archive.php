@@ -36,7 +36,7 @@ class Archive
     public function upload(Filename $dirPath)
     {
         foreach ($this->uploadingFiles as $path) {
-            $this->archivedFiles[] = str_replace($dirPath->path().DIRECTORY_SEPARATOR, '', $path);
+            $this->archivedFiles[$path] = str_replace($dirPath->path().DIRECTORY_SEPARATOR, '', $path);
         }
     }
 
