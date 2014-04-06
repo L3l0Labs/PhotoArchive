@@ -4,13 +4,13 @@ namespace L3l0Labs\Archive;
 
 class Archive
 {
-    private $name;
-    private $archivedFiles = [];
-    private $uploadingFiles = [];
+    protected $name;
+    protected $archivedFiles = [];
+    protected $uploadingFiles = [];
 
     public function __construct(Name $name)
     {
-        $this->name = $name;
+        $this->setName($name);
     }
 
     public function addFileToUpload(Filename $filename)
@@ -43,5 +43,10 @@ class Archive
     public function name()
     {
         return $this->name;
+    }
+
+    protected function setName(Name $name)
+    {
+        $this->name = $name;
     }
 }
