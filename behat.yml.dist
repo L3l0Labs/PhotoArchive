@@ -4,3 +4,6 @@ default:
       contexts: [ PhotosOwnerContext ]
       filters:
         role: photos owner
+    functional:
+      paths:    [ %paths.base%/tests/functional ]
+      contexts: [ FunctionalContext ]
