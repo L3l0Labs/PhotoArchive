@@ -7,9 +7,7 @@ use Behat\Gherkin\Node\TableNode;
 use L3l0Labs\Filesystem\InMemoryFilesystem;
 use L3l0Labs\Filesystem\Filename;
 use L3l0Labs\Filesystem\File\File;
-use L3l0Labs\Filesystem\File\Photo;
 use L3l0Labs\Filesystem\File\Directory;
-use L3l0Labs\Archive\Name as ArchiveName;
 use L3l0Labs\Archive\InMemoryRepository;
 use L3l0Labs\Archive\ArchiveFactory;
 use L3l0Labs\FilesystemArchive\DownloadArchive;
@@ -71,7 +69,7 @@ class PhotosOwnerContext implements SnippetAcceptingContext
      */
     public function iUploadDirectoryAsArchive($directoryName, $archiveName)
     {
-        $this->uploadArchiveUseCase->uploadToArchive(ArchiveName::create($archiveName), Filename::create($directoryName));
+        $this->uploadArchiveUseCase->uploadToArchive($archiveName, $directoryName);
     }
 
     /**
@@ -79,7 +77,7 @@ class PhotosOwnerContext implements SnippetAcceptingContext
      */
     public function iShouldBeAbleToDownloadArchive($archiveName, $directoryName)
     {
-        $directory = $this->downloadArchiveUseCase->downloadFromArchive(ArchiveName::create($archiveName), Filename::create($directoryName));
+        $directory = $this->downloadArchiveUseCase->downloadFromArchive($archiveName, $directoryName);
         if (!$directory) {
             throw new \Exception('Cannot downloads files from archive');
         }

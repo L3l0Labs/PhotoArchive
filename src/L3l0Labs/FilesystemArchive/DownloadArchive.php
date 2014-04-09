@@ -3,6 +3,7 @@
 namespace L3l0Labs\FilesystemArchive;
 
 use L3l0Labs\Archive\Name as ArchiveName;
+use L3l0Labs\Archive\Name;
 use L3l0Labs\Archive\Repository as ArchiveRepository;
 use L3l0Labs\Filesystem\File\Directory;
 use L3l0Labs\Filesystem\File\File;
@@ -20,15 +21,16 @@ class DownloadArchive
         $this->archiveRepository = $archiveRepository;
     }
 
-    public function downloadFromArchive(ArchiveName $archiveName, Filename $directoryName)
+    public function downloadFromArchive($archiveName, $directoryPath)
     {
-        $archive = $this->archiveRepository->find($archiveName);
+        $directoryFilename = Filename::create($directoryPath);
+        $archive = $this->archiveRepository->find(Name::create($archiveName));
         $files = [];
         foreach ($archive->archivedFiles() as $path) {
-            $files[] = new File(Filename::create($directoryName->path().DIRECTORY_SEPARATOR.$path));
+            $files[] = new File(Filename::create($directoryFilename->path().DIRECTORY_SEPARATOR.$path));
         }
 
-        $directory = new Directory($directoryName, $files);
+        $directory = new Directory($directoryFilename, $files);
         $this->filesystem->add($directory);
 
         return $directory;

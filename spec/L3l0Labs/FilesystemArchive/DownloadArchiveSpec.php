@@ -51,7 +51,7 @@ class DownloadArchiveSpec extends ObjectBehavior
         ;
 
         $this
-            ->downloadFromArchive(ArchiveName::create('MyArchive!'), Filename::create('/home/l3l0/new'))
+            ->downloadFromArchive('MyArchive!', '/home/l3l0/new')
             ->shouldBeAnInstanceOf('L3l0Labs\Filesystem\File\Directory')
         ;
     }

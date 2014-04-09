@@ -76,6 +76,6 @@ class UploadArchiveSpec extends ObjectBehavior
             ->shouldBeCalled()
         ;
 
-        $this->uploadToArchive(ArchiveName::create('MyArchive!'), Filename::create('/home/test'));
+        $this->uploadToArchive('MyArchive!', '/home/test');
     }
 }

@@ -27,8 +27,11 @@ class UploadArchive
         $this->archiveFactory = $archiveFactory;
     }
 
-    public function uploadToArchive(Name $archiveName, Filename $fileToUploadName)
+    public function uploadToArchive($archiveName, $fileToUploadName)
     {
+        $archiveName = Name::create($archiveName);
+        $fileToUploadName = Filename::create($fileToUploadName);
+
         $archive = $this->archiveFactory->createArchive($archiveName);
 
         /**
