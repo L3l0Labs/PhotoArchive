@@ -18,7 +18,10 @@
     "require-dev": {
         "behat/behat": "*@dev",
         "phpspec/phpspec": "*@dev",
-        "sensio/generator-bundle": "~2.3"
+        "sensio/generator-bundle": "~2.3",
+        "behat/symfony2-extension": "dev-master@dev",
+        "behat/mink-extension": "*@dev",
+        "behat/mink-browserkit-driver": "*@dev"
     },
     "scripts": {
         "post-root-package-install": [

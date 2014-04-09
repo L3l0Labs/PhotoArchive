@@ -2,8 +2,15 @@ default:
   suites:
     photo_owner:
       contexts: [ PhotosOwnerContext ]
+      paths:    [ %paths.base%/features ]
       filters:
         role: photos owner
     functional:
       paths:    [ %paths.base%/tests/functional ]
       contexts: [ FunctionalContext ]
+  extensions:
+    Behat\Symfony2Extension\Extension: ~
+    Behat\MinkExtension\Extension:
+      sessions:
+        default:
+          symfony2: ~
