@@ -1,35 +1,43 @@
 ---
 vagrantfile-local:
     vm:
-        box: ubuntu-precise12042-x64-vbox43
-        box_url: 'http://box.puphpet.com/ubuntu-precise12042-x64-vbox43.box'
+        box: puphpet/ubuntu1404-x64
+        box_url: puphpet/ubuntu1404-x64
         hostname: null
+        memory: '512'
+        chosen_provider: virtualbox
         network:
             private_network: 33.33.33.10
             forwarded_port:
-                cIVtyzD2Z7kl:
+                s9iiFLOX0jv9:
                     host: '9017'
                     guest: '22'
         provider:
             virtualbox:
                 modifyvm:
                     natdnshostresolver1: on
-                    memory: '512'
                 setextradata:
                     VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root: 1
+            vmware:
+                numvcpus: 1
+            parallels:
+                cpus: 1
         provision:
             puppet:
                 manifests_path: puphpet/puppet
                 manifest_file: manifest.pp
+                module_path: puphpet/puppet/modules
                 options:
                     - '--verbose'
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
                     - '--parser future'
         synced_folder:
-            fENAZnTA2ovU:
+            x69WmRhWP3hN:
                 source: ./
                 target: /var/www
-                nfs: 'true'
+                sync_type: nfs
+                rsync:
+                    auto: 'false'
         usable_port_range: 2200..2250
     ssh:
         host: null
@@ -59,6 +67,9 @@ mailcatcher:
         http_port: '1080'
         mailcatcher_path: /usr/local/bin
         log_path: /var/log/mailcatcher/mailcatcher.log
+firewall:
+    install: '1'
+    rules: null
 apache:
     install: 0
     settings:
@@ -72,7 +83,7 @@ apache:
         - php
         - rewrite
     vhosts:
-        POXOxaWPARqc:
+        MZ9XD9bGy3e2:
             servername: awesome.dev
             serveraliases:
                 - www.awesome.dev
@@ -92,7 +103,7 @@ apache:
 nginx:
     install: '1'
     vhosts:
-        tI0ccx3iNLsM:
+        nmGwaqQNKo0b:
             server_name: photo-archive.dev
             server_aliases:
                 - www.photo-archive.dev
@@ -106,10 +117,13 @@ nginx:
                 - app_dev.php
             envvars:
                 - 'APP_ENV dev'
+            ssl_cert: ''
+            ssl_key: ''
 php:
     install: '1'
     version: '55'
     composer: '1'
+    composer_home: ''
     modules:
         php:
             - cli
@@ -132,6 +146,8 @@ xdebug:
         xdebug.remote_enable: '1'
         xdebug.remote_handler: dbgp
         xdebug.remote_port: '9000'
+        xdebug.idekey: PHPSTORM
+        xdebug.remote_host: 33.33.33.1
 drush:
     install: 0
     settings:
@@ -139,10 +155,9 @@ drush:
 mysql:
     install: 0
     root_password: '123'
-    phpmyadmin: 0
     adminer: 0
     databases:
-        ooUSvFcfL42i:
+        DzvJ7ihIDF00:
             grant:
                 - ALL
             name: dbname
@@ -158,7 +173,7 @@ postgresql:
         encoding: UTF8
         version: '9.3'
     databases:
-        ZlkpMzW9cb6c:
+        RV3eNMgj7fDs:
             grant: ALL
             name: photoarchive
             user: photoarchive
@@ -168,7 +183,6 @@ postgresql:
 mariadb:
     install: 0
     root_password: '123'
-    phpmyadmin: 0
     adminer: 0
     databases: {  }
     version: '10.0'
@@ -178,7 +192,7 @@ mongodb:
         auth: 1
         port: '27017'
     databases:
-        Yz0FSMCvpXBd:
+        zc0An2olxwre:
             name: photoarchive
             user: photoarchive
             password: test123
