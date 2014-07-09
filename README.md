@@ -17,6 +17,6 @@ Zespół "Cocoders & friends" w którego skład wchodzi firma "[Cocoders](http:/
 * Szymon "@skowi" Skowroński, Toruń
 * Michał "@omenrpg" Kozłowski, Wierzbiny
 * Robert "@meph87" Stepnowski, Gdańsk Wrzeszcz
-* Kamil Piechaczek, Bytom
+* Kamil "@pomek" Piechaczek, Bytom
 
 Zespół reprezentuje społeczność PHPers Trójmiasto.
