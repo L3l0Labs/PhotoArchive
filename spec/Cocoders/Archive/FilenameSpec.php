@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\L3l0Labs\Archive;
+namespace spec\Cocoders\Archive;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -21,7 +21,7 @@ class FilenameSpec extends ObjectBehavior
     function it_can_create_itself()
     {
         $filename = self::create('/home/some/test.jpg');
-        $filename->shouldBeAnInstanceOf('L3l0Labs\Archive\Filename');
+        $filename->shouldBeAnInstanceOf('Cocoders\Archive\Filename');
         $filename->path()->shouldBe('/home/some/test.jpg');
     }
 }

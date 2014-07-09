@@ -1,14 +1,13 @@
 <?php
 
-namespace L3l0Labs\FilesystemArchive;
+namespace Cocoders\FilesystemArchive;
 
-use L3l0Labs\Archive\Name as ArchiveName;
-use L3l0Labs\Archive\Name;
-use L3l0Labs\Archive\Repository as ArchiveRepository;
-use L3l0Labs\Filesystem\File\Directory;
-use L3l0Labs\Filesystem\File\File;
-use L3l0Labs\Filesystem\Filename;
-use L3l0Labs\Filesystem\Filesystem;
+use Cocoders\Archive\Name;
+use Cocoders\Archive\Repository as ArchiveRepository;
+use Cocoders\Filesystem\File\Directory;
+use Cocoders\Filesystem\File\File;
+use Cocoders\Filesystem\Filename;
+use Cocoders\Filesystem\Filesystem;
 
 class DownloadArchive
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace spec\L3l0Labs\Bundle\FilesystemArchiveBundle\Entity;
+namespace spec\Cococders\Bundle\FilesystemArchiveBundle\Entity;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\EntityRepository;
-use L3l0Labs\Archive\Name;
-use L3l0Labs\Bundle\FilesystemArchiveBundle\Entity\Archive;
+use Cocoders\Archive\Name;
+use Cocoders\Bundle\FilesystemArchiveBundle\Entity\Archive;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -21,7 +21,7 @@ class ArchiveRepositorySpec extends ObjectBehavior
 
     function it_is_archive_repository()
     {
-        $this->shouldHaveType('L3l0Labs\Archive\Repository');
+        $this->shouldHaveType('Cocoders\Archive\Repository');
     }
 
     function it_fetches_archive_from_entity_repository(EntityRepository $entityRepository, Archive $archive)

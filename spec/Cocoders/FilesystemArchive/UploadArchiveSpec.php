@@ -1,16 +1,16 @@
 <?php
 
-namespace spec\L3l0Labs\FilesystemArchive;
+namespace spec\Cocoders\FilesystemArchive;
 
-use L3l0Labs\Archive\Archive;
-use L3l0Labs\Archive\ArchiveFactory;
-use L3l0Labs\Archive\Name as ArchiveName;
-use L3l0Labs\Archive\Filename as ArchiveFilename;
-use L3l0Labs\Archive\Repository;
-use L3l0Labs\Filesystem\File\File;
-use L3l0Labs\Filesystem\File\Directory;
-use L3l0Labs\Filesystem\Filename;
-use L3l0Labs\Filesystem\Filesystem;
+use Cocoders\Archive\Archive;
+use Cocoders\Archive\ArchiveFactory;
+use Cocoders\Archive\Name as ArchiveName;
+use Cocoders\Archive\Filename as ArchiveFilename;
+use Cocoders\Archive\Repository;
+use Cocoders\Filesystem\File\File;
+use Cocoders\Filesystem\File\Directory;
+use Cocoders\Filesystem\Filename;
+use Cocoders\Filesystem\Filesystem;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

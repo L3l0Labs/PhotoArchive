@@ -1,9 +1,9 @@
 <?php
 
-namespace L3l0Labs\Bundle\FilesystemArchiveBundle\Entity;
+namespace Cocoders\Bundle\FilesystemArchiveBundle\Entity;
 
 use Cocoders\Archive\Archive as BaseArchive;
-use L3l0Labs\Archive\Name;
+use Cocoders\Archive\Name;
 
 class Archive extends BaseArchive
 {

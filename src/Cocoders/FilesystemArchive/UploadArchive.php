@@ -1,14 +1,14 @@
 <?php
 
-namespace L3l0Labs\FilesystemArchive;
+namespace Cocoders\FilesystemArchive;
 
-use L3l0Labs\Archive\ArchiveFactory;
-use L3l0Labs\Archive\Name;
-use L3l0Labs\Archive\Repository;
-use L3l0Labs\Archive\Filename as ArchiveFilename;
-use L3l0Labs\Filesystem\File\Directory;
-use L3l0Labs\Filesystem\Filename;
-use L3l0Labs\Filesystem\Filesystem;
+use Cocoders\Archive\ArchiveFactory;
+use Cocoders\Archive\Name;
+use Cocoders\Archive\Repository;
+use Cocoders\Archive\Filename as ArchiveFilename;
+use Cocoders\Filesystem\File\Directory;
+use Cocoders\Filesystem\Filename;
+use Cocoders\Filesystem\Filesystem;
 
 class UploadArchive
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace L3l0Labs\Filesystem;
+namespace Cocoders\Filesystem;
 
 final class Filename
 {

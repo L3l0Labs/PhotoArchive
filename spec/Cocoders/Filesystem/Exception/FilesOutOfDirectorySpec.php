@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\L3l0Labs\Filesystem\Exception;
+namespace spec\Cocoders\Filesystem\Exception;
 
-use L3l0Labs\Filesystem\Filename;
+use Cocoders\Filesystem\Filename;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace L3l0Labs\Bundle\FilesystemArchiveBundle\Form;
+namespace Cocoders\Bundle\FilesystemArchiveBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;

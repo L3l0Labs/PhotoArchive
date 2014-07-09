@@ -1,4 +1,4 @@
-L3l0Labs\Bundle\FilesystemArchiveBundle\Entity\Archive:
+Cocoders\Bundle\FilesystemArchiveBundle\Entity\Archive:
     type: entity
     table: archives
     id:

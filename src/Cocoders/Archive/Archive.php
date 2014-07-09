@@ -2,9 +2,6 @@
 
 namespace Cocoders\Archive;
 
-use L3l0Labs\Archive\Filename;
-use L3l0Labs\Archive\Name;
-
 class Archive
 {
     protected $name;

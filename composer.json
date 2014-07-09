@@ -1,6 +1,6 @@
 {
     "autoload": {
-        "psr-4": {"L3l0Labs\\": "src/L3l0Labs/"}
+        "psr-4": {"Cocoders\\": "src/Cocoders/"}
     },
     "require": {
         "php": ">=5.4",

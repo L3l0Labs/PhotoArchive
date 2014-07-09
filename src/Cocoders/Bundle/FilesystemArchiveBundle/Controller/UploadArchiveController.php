@@ -1,8 +1,8 @@
 <?php
 
-namespace L3l0Labs\Bundle\FilesystemArchiveBundle\Controller;
+namespace Cocoders\Bundle\FilesystemArchiveBundle\Controller;
 
-use L3l0Labs\FilesystemArchive\UploadArchive;
+use Cocoders\FilesystemArchive\UploadArchive;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Templating\EngineInterface;
@@ -25,7 +25,7 @@ class UploadArchiveController
         return $this
             ->templating
             ->renderResponse(
-                'L3l0LabsFilesystemArchiveBundle:Archive:upload.html.twig', ['form' => $this->form->createView()]
+                'CocodersFilesystemArchiveBundle:Archive:upload.html.twig', ['form' => $this->form->createView()]
             )
         ;
     }

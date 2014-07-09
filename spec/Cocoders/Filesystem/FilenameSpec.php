@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\L3l0Labs\Filesystem;
+namespace spec\Cocoders\Filesystem;
 
-use L3l0Labs\Filesystem\Filename;
+use Cocoders\Filesystem\Filename;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -65,7 +65,7 @@ class FilenameSpec extends ObjectBehavior
     function it_can_create_itself()
     {
         $filename = self::create('/home/some');
-        $filename->shouldBeAnInstanceOf('L3l0Labs\Filesystem\Filename');
+        $filename->shouldBeAnInstanceOf('Cocoders\Filesystem\Filename');
         $filename->path()->shouldBe('/home/some');
     }
 }

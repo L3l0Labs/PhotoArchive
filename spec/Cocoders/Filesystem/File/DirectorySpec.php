@@ -1,9 +1,9 @@
 <?php
 
-namespace spec\L3l0Labs\Filesystem\File;
+namespace spec\Cocoders\Filesystem\File;
 
-use L3l0Labs\Filesystem\File\File;
-use L3l0Labs\Filesystem\Filename;
+use Cocoders\Filesystem\File\File;
+use Cocoders\Filesystem\Filename;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -17,7 +17,7 @@ class DirectorySpec extends ObjectBehavior
 
     function it_is_file()
     {
-        $this->shouldHaveType('L3l0Labs\Filesystem\File\File');
+        $this->shouldHaveType('Cocoders\Filesystem\File\File');
     }
 
     function it_allows_to_get_files_from_directory()
@@ -45,6 +45,6 @@ class DirectorySpec extends ObjectBehavior
         $directoryName = Filename::create('/home/l3l0/zzz');
         $selfie = new File(Filename::create('/home/other/zzz/aaa.jpg'));
 
-        $this->shouldThrow('L3l0Labs\Filesystem\Exception\FilesOutOfDirectory')->during('__construct', [$directoryName, [$selfie]]);
+        $this->shouldThrow('Cocoders\Filesystem\Exception\FilesOutOfDirectory')->during('__construct', [$directoryName, [$selfie]]);
     }
 }

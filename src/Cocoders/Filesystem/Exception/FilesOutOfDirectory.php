@@ -1,9 +1,9 @@
 <?php
 
-namespace L3l0Labs\Filesystem\Exception;
+namespace Cocoders\Filesystem\Exception;
 
 use InvalidArgumentException;
-use L3l0Labs\Filesystem\Filename;
+use Cocoders\Filesystem\Filename;
 
 class FilesOutOfDirectory extends \InvalidArgumentException
 {

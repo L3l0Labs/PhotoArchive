@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\L3l0Labs\Bundle\FilesystemArchiveBundle\Form;
+namespace spec\Cocoders\Bundle\FilesystemArchiveBundle\Form;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;

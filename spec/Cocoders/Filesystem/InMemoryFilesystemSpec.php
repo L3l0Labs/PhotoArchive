@@ -1,9 +1,9 @@
 <?php
 
-namespace spec\L3l0Labs\Filesystem;
+namespace spec\Cocoders\Filesystem;
 
-use L3l0Labs\Filesystem\File\File;
-use L3l0Labs\Filesystem\Filename;
+use Cocoders\Filesystem\File\File;
+use Cocoders\Filesystem\Filename;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -11,7 +11,7 @@ class InMemoryFilesystemSpec extends ObjectBehavior
 {
     function it_is_filesystem()
     {
-        $this->shouldHaveType('L3l0Labs\Filesystem\Filesystem');
+        $this->shouldHaveType('Cocoders\Filesystem\Filesystem');
     }
 
     function it_stores_files(File $file)

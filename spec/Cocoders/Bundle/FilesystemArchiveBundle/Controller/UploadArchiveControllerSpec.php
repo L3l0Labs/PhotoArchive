@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\L3l0Labs\Bundle\FilesystemArchiveBundle\Controller;
+namespace spec\Cocoders\Bundle\FilesystemArchiveBundle\Controller;
 
-use L3l0Labs\FilesystemArchive\UploadArchive;
+use Cocoders\FilesystemArchive\UploadArchive;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
@@ -38,7 +38,7 @@ class UploadArchiveControllerSpec extends ObjectBehavior
         $form->createView()->willReturn($formView);
 
         $templating
-            ->renderResponse('L3l0LabsFilesystemArchiveBundle:Archive:upload.html.twig', ['form' => $formView])
+            ->renderResponse('CocodersFilesystemArchiveBundle:Archive:upload.html.twig', ['form' => $formView])
             ->shouldBeCalled()
             ->willReturn($response)
         ;

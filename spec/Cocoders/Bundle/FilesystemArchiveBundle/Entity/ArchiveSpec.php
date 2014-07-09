@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\L3l0Labs\Bundle\FilesystemArchiveBundle\Entity;
+namespace spec\Cococders\Bundle\FilesystemArchiveBundle\Entity;
 
-use L3l0Labs\Archive\Name;
+use Cocoders\Archive\Name;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -15,7 +15,7 @@ class ArchiveSpec extends ObjectBehavior
 
     function it_is_archive()
     {
-        $this->shouldHaveType('L3l0Labs\Archive\Archive');
+        $this->shouldHaveType('Cocoders\Archive\Archive');
     }
 
     function it_converts_doctrine_string_name_into_name_value_object()

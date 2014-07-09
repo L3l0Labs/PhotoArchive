@@ -1,9 +1,9 @@
 <?php
 
-namespace spec\L3l0Labs\Archive;
+namespace spec\Cocoders\Archive;
 
-use L3l0Labs\Archive\Filename;
-use L3l0Labs\Archive\Name;
+use Cocoders\Archive\Filename;
+use Cocoders\Archive\Name;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

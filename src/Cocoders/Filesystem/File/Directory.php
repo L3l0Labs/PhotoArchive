@@ -1,9 +1,9 @@
 <?php
 
-namespace L3l0Labs\Filesystem\File;
+namespace Cocoders\Filesystem\File;
 
-use L3l0Labs\Filesystem\Exception\FilesOutOfDirectory;
-use L3l0Labs\Filesystem\Filename;
+use Cocoders\Filesystem\Exception\FilesOutOfDirectory;
+use Cocoders\Filesystem\Filename;
 
 final class Directory extends File
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace L3l0Labs\Filesystem\File;
+namespace Cocoders\Filesystem\File;
 
-use L3l0Labs\Filesystem\Filename;
+use Cocoders\Filesystem\Filename;
 
 class File
 {

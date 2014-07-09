@@ -1,12 +1,12 @@
 <?php
 
-namespace L3l0Labs\Bundle\FilesystemArchiveBundle\Entity;
+namespace Cocoders\Bundle\FilesystemArchiveBundle\Entity;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\EntityRepository;
 use Cocoders\Archive\Archive as DomainArchive;
-use L3l0Labs\Archive\Name;
-use L3l0Labs\Archive\Repository;
+use Cocoders\Archive\Name;
+use Cocoders\Archive\Repository;
 
 class ArchiveRepository implements Repository
 {

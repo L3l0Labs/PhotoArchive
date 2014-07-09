@@ -1,8 +1,8 @@
 <?php
 
-namespace L3l0Labs\Filesystem;
+namespace Cocoders\Filesystem;
 
-use L3l0Labs\Filesystem\File\File;
+use Cocoders\Filesystem\File\File;
 
 class InMemoryFilesystem implements Filesystem
 {

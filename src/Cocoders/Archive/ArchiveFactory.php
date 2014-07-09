@@ -1,8 +1,6 @@
 <?php
 
-namespace L3l0Labs\Archive;
-
-use Cocoders\Archive\Archive;
+namespace Cocoders\Archive;
 
 class ArchiveFactory
 {

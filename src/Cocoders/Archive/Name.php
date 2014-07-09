@@ -1,6 +1,6 @@
 <?php
 
-namespace L3l0Labs\Archive;
+namespace Cocoders\Archive;
 
 final class Name
 {
