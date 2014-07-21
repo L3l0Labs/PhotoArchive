@@ -1,4 +1,5 @@
 {
+    "name": "cocoders/file-archive",
     "autoload": {
         "psr-4": {"Cocoders\\": "src/Cocoders/"}
     },
