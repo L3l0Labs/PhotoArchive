@@ -5,9 +5,3 @@ default:
       paths:    [ %paths.base%/features ]
       filters:
         role: photos owner
-  extensions:
-    Behat\Symfony2Extension\Extension: ~
-    Behat\MinkExtension\Extension:
-      sessions:
-        default:
-          symfony2: ~
