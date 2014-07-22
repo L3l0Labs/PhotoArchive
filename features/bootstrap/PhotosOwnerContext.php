@@ -4,14 +4,14 @@ use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\TableNode;
 
-use L3l0Labs\Filesystem\InMemoryFilesystem;
-use L3l0Labs\Filesystem\Filename;
-use L3l0Labs\Filesystem\File\File;
-use L3l0Labs\Filesystem\File\Directory;
-use L3l0Labs\Archive\InMemoryRepository;
-use L3l0Labs\Archive\ArchiveFactory;
-use L3l0Labs\FilesystemArchive\DownloadArchive;
-use L3l0Labs\FilesystemArchive\UploadArchive;
+use Cocoders\Filesystem\InMemoryFilesystem;
+use Cocoders\Filesystem\Filename;
+use Cocoders\Filesystem\File\File;
+use Cocoders\Filesystem\File\Directory;
+use Cocoders\Archive\InMemoryRepository;
+use Cocoders\Archive\ArchiveFactory;
+use Cocoders\FilesystemArchive\DownloadArchive;
+use Cocoders\FilesystemArchive\UploadArchive;
 
 class PhotosOwnerContext implements SnippetAcceptingContext
 {

@@ -1,3 +1,0 @@
-l3l0_labs_filesystem_archive_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: L3l0LabsFilesystemArchiveBundle:Default:index }
