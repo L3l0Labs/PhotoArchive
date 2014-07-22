@@ -1,4 +1,0 @@
-l3l0_labs_filesystem_archive:
-    resource: "@CocodersFilesystemArchiveBundle/Resources/config/routing.yml"
-    prefix:   /
-
