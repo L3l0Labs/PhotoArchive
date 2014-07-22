@@ -249,7 +249,7 @@ class apache::params inherits ::apache::version {
     $keepalive            = 'Off'
     $keepalive_timeout    = 15
     $max_keepalive_requests = 100
-    $fastcgi_lib_path     = undef # TODO: revisit
+    $fastcgi_lib_path     = undef
     $mime_support_package = 'misc/mime-support'
     $mime_types_config    = '/usr/local/etc/mime.types'
   } else {

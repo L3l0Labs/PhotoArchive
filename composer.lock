@@ -4,23 +4,23 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "541cce0885801f3838f87dae67f56951",
+    "hash": "6b9cc9f2ecae6cb500193db5e420f682",
     "packages": [
 
     ],
     "packages-dev": [
         {
             "name": "behat/behat",
-            "version": "dev-master",
+            "version": "v3.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Behat/Behat.git",
-                "reference": "a996f07b052f61cf224c4494d06c424bde1b341f"
+                "reference": "0fb9a9494a92374ddcc741374cef68c4cbf6fa05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Behat/zipball/a996f07b052f61cf224c4494d06c424bde1b341f",
-                "reference": "a996f07b052f61cf224c4494d06c424bde1b341f",
+                "url": "https://api.github.com/repos/Behat/Behat/zipball/0fb9a9494a92374ddcc741374cef68c4cbf6fa05",
+                "reference": "0fb9a9494a92374ddcc741374cef68c4cbf6fa05",
                 "shasum": ""
             },
             "require": {
@@ -88,7 +88,7 @@
                 "symfony",
                 "testing"
             ],
-            "time": "2014-07-17 06:37:16"
+            "time": "2014-07-17 06:37:41"
         },
         {
             "name": "behat/gherkin",
@@ -889,7 +889,6 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "behat/behat": 20,
         "phpspec/phpspec": 20
     },
     "platform": {

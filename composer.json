@@ -1,5 +1,6 @@
 {
     "name": "cocoders/file-archive",
+    "description": "File archive project for backup pictures and other files in the clouds",
     "autoload": {
         "psr-4": {"Cocoders\\": "src/Cocoders/"}
     },
@@ -7,10 +8,29 @@
         "php": ">=5.4"
     },
     "require-dev": {
-        "behat/behat": "*@dev",
-        "phpspec/phpspec": "*@dev"
+        "behat/behat": "3.0.*",
+        "phpspec/phpspec": "2.0.*@dev"
     },
     "config": {
         "bin-dir": "bin"
-    }
+    },
+    "authors": [
+        {
+            "name": "Cocoders team",
+            "homepage": "http://cocoders.com"
+        },
+        {
+            "name": "Michał \"Omen\" Kozłowski",
+            "homepage": "http://github.com/omenrpg"
+        },
+        {
+            "name": "Robert Stepnowski",
+            "homepage": "http://github.com/meph87"
+        },
+        {
+            "name": "Kamil Piechaczek",
+            "homepage": "http://github.com/pomek"
+        }
+    ],
+    "license": "MIT"
 }

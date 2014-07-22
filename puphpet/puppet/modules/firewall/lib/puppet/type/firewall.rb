@@ -946,7 +946,7 @@ Puppet::Type.newtype(:firewall) do
   validate do
     debug("[validate]")
 
-    # TODO: this is put here to skip validation if ensure is not set. This
+    # this is put here to skip validation if ensure is not set. This
     # is because there is a revalidation stage called later where the values
     # are not set correctly. I tried tracing it - but have put in this
     # workaround instead to skip. Must get to the bottom of this.

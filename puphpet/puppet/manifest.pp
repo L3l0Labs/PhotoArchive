@@ -1482,7 +1482,6 @@ define mariadb_db (
   }
 }
 
-# @todo update this!
 define mariadb_nginx_default_conf (
   $webroot
 ) {

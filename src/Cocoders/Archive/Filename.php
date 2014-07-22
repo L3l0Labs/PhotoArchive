@@ -25,9 +25,4 @@ class Filename
     {
         return new self($name);
     }
-
-    public function name()
-    {
-        // TODO: write logic here
-    }
 }

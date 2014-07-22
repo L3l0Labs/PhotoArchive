@@ -17,7 +17,7 @@ class InMemoryFilesystemSpec extends ObjectBehavior
     function it_stores_files(File $file)
     {
         $file->filename()->willReturn(Filename::create('/home/l3l0/test.jpg'));
-        $this->add($file)->shouldBe($this);
+        $this->add($file);
         $this->all()->shouldBe([$file]);
     }
 

@@ -6,6 +6,9 @@ use Cocoders\Filesystem\File\File;
 
 interface Filesystem
 {
+    /**
+     * @return void
+     */
     public function add(File $file);
 
     /**

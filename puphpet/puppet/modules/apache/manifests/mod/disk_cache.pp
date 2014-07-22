@@ -5,7 +5,6 @@ class apache::mod::disk_cache {
     'freebsd' => '/var/cache/mod_disk_cache',
   }
   if $::osfamily != 'FreeBSD' {
-    # FIXME: investigate why disk_cache was dependent on proxy
     # NOTE: on FreeBSD disk_cache is compiled by default but proxy is not
     Class['::apache::mod::proxy'] -> Class['::apache::mod::disk_cache']
   }

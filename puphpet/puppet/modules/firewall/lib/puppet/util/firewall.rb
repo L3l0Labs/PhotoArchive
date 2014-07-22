@@ -44,7 +44,7 @@ module Puppet::Util::Firewall
 
   # Convert log_level names to their respective numbers
   def log_level_name_to_number(value)
-    #TODO make this 0-7 only
+    #make this 0-7 only
     if value =~ /\d/
       value
     else

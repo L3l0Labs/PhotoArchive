@@ -50,7 +50,6 @@ define beanstalkd::config ( # name
       $hasstatus          = 'true'
       $restart            = '/etc/init.d/beanstalkd restart'
     }
-    # TODO: add more OS support!
     default: {   
       fail("ERROR [${module_name}]: I don't know how to manage this OS: ${::operatingsystem}")
     }
